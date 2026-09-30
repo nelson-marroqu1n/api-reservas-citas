@@ -1,5 +1,5 @@
 {
-  "name": "curso-expressjs",
+  "name": "api-reservas-citas",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
