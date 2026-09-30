@@ -58,7 +58,7 @@ Todas las rutas usan el prefijo `/api`.
 
 | Método | Ruta | Descripción | Acceso |
 |---|---|---|---|
-| POST | `/api/auth/register` | Registrar usuario | PÃºblico |
+| POST | `/api/auth/register` | Registrar usuario | Público |
 | POST | `/api/auth/login` | Iniciar sesión y recibir token JWT | Público |
 | GET | `/api/auth/protected-route` | Ejemplo de ruta protegida | Token JWT |
 | POST | `/api/reservations` | Crear reserva | Token JWT |
