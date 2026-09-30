@@ -108,7 +108,7 @@ La reserva usa `date`, `userId` y `timeBlockId`; el bloque horario usa `startTim
 
 El `app.js` ubicado en la raíz contiene ejemplos anteriores del curso; el servidor usado por los comandos `npm start` y `npm run dev` está en `src/server.js`.
 
-## Antes de usar en producciÃ³n
+## Antes de usar en producción
 
 Revisa el control de acceso a las rutas de reservas: actualmente se requiere un token, pero conviene verificar que cada usuario solo pueda ver, modificar o cancelar sus propias citas. También protege con autenticación el historial de usuario. El repositorio no incluye una suite de pruebas todaví­a.
 
