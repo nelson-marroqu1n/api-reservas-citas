@@ -1,6 +1,6 @@
 ﻿# API de reservas de citas
 
-API REST construida con Node.js, Express y Prisma para registrar usuarios, iniciar sesiÃ³n y gestionar citas y bloques horarios en PostgreSQL. La API permite consultar, crear, actualizar y eliminar reservas; los administradores pueden crear bloques horarios y consultar las reservas.
+API REST construida con Node.js, Express y Prisma para registrar usuarios, iniciar sesión y gestionar citas y bloques horarios en PostgreSQL. La API permite consultar, crear, actualizar y eliminar reservas; los administradores pueden crear bloques horarios y consultar las reservas.
 
 ## Requisitos
 
@@ -8,7 +8,7 @@ API REST construida con Node.js, Express y Prisma para registrar usuarios, inici
 - PostgreSQL
 - Una base de datos PostgreSQL accesible desde esta computadora
 
-## InstalaciÃ³n
+## Instalación
 
 ```bash
 git clone <URL_DEL_REPOSITORIO>
@@ -16,7 +16,7 @@ cd api-reservas-citas
 npm install
 ```
 
-Copia `.env.example` a `.env` y configura las variables. No subas `.env` a GitHub.
+Copia `.env.example` a `.env` y configura las variables.
 
 ```env
 PORT=3000
@@ -32,13 +32,13 @@ npx prisma migrate deploy
 npx prisma generate
 ```
 
-Para cargar los datos de demostraciÃ³n (opcional):
+Para cargar los datos de demostraciónn (opcional):
 
 ```bash
 node prisma/seed.js
 ```
 
-El seed crea usuarios de ejemplo con contraseÃ±a `Password123!` y **borra las citas y bloques horarios existentes** antes de insertar los datos. Ãšsalo solo en una base de datos de prueba.
+El seed crea usuarios de ejemplo con contraseña `Password123!` y **borra las citas y bloques horarios existentes** antes de insertar los datos. Úsalo solo en una base de datos de prueba.
 
 ## Ejecutar
 
@@ -56,10 +56,10 @@ npm start
 
 Todas las rutas usan el prefijo `/api`.
 
-| MÃ©todo | Ruta | DescripciÃ³n | Acceso |
+| Método | Ruta | Descripción | Acceso |
 |---|---|---|---|
 | POST | `/api/auth/register` | Registrar usuario | PÃºblico |
-| POST | `/api/auth/login` | Iniciar sesiÃ³n y recibir token JWT | PÃºblico |
+| POST | `/api/auth/login` | Iniciar sesión y recibir token JWT | Público |
 | GET | `/api/auth/protected-route` | Ejemplo de ruta protegida | Token JWT |
 | POST | `/api/reservations` | Crear reserva | Token JWT |
 | GET | `/api/reservations/:id` | Consultar reserva | Token JWT |
@@ -69,7 +69,7 @@ Todas las rutas usan el prefijo `/api`.
 | GET | `/api/admin/reservations` | Listar reservas | Token JWT de ADMIN |
 | GET | `/api/users/:id/appoinments` | Consultar citas de un usuario | Actualmente no requiere token |
 
-Para las rutas protegidas, envÃ­a el token devuelto por `/api/auth/login` en el encabezado:
+Para las rutas protegidas, enví­a el token devuelto por `/api/auth/login` en el encabezado:
 
 ```http
 Authorization: Bearer <TOKEN>
@@ -85,7 +85,7 @@ Ejemplo de registro:
 }
 ```
 
-Ejemplo de inicio de sesiÃ³n:
+Ejemplo de inicio de sesión:
 
 ```json
 {
@@ -98,19 +98,19 @@ La reserva usa `date`, `userId` y `timeBlockId`; el bloque horario usa `startTim
 
 ## Estructura
 
-- `src/routes`: definiciÃ³n y montaje de rutas (`src/server.js` inicia esta aplicaciÃ³n).
+- `src/routes`: definición y montaje de rutas (`src/server.js` inicia esta aplicación).
 - `src/controllers`: manejo de solicitudes y respuestas.
-- `src/services`: lÃ³gica de negocio y consultas con Prisma.
-- `src/middlewares`: autenticaciÃ³n JWT, registro de solicitudes y manejo de errores.
+- `src/services`: lógica de negocio y consultas con Prisma.
+- `src/middlewares`: autenticación JWT, registro de solicitudes y manejo de errores.
 - `prisma/schema.prisma`: modelos de la base de datos.
 - `prisma/migrations`: migraciones de Prisma.
-- `prisma/seed.js`: datos de demostraciÃ³n.
+- `prisma/seed.js`: datos de demostración.
 
-El `app.js` ubicado en la raÃ­z contiene ejemplos anteriores del curso; el servidor usado por los comandos `npm start` y `npm run dev` estÃ¡ en `src/server.js`.
+El `app.js` ubicado en la raíz contiene ejemplos anteriores del curso; el servidor usado por los comandos `npm start` y `npm run dev` está en `src/server.js`.
 
 ## Antes de usar en producciÃ³n
 
-Revisa el control de acceso a las rutas de reservas: actualmente se requiere un token, pero conviene verificar que cada usuario solo pueda ver, modificar o cancelar sus propias citas. TambiÃ©n protege con autenticaciÃ³n el historial de usuario. El repositorio no incluye una suite de pruebas todavÃ­a.
+Revisa el control de acceso a las rutas de reservas: actualmente se requiere un token, pero conviene verificar que cada usuario solo pueda ver, modificar o cancelar sus propias citas. También protege con autenticación el historial de usuario. El repositorio no incluye una suite de pruebas todaví­a.
 
 
 ## Tecnologías
