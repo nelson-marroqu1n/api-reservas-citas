@@ -116,7 +116,7 @@ Revisa el control de acceso a las rutas de reservas: actualmente se requiere un 
 ## Tecnologías
 
 - **Node.js**: entorno de ejecución.
-- **Express 5**: servidor y rutas de la API REST.
+- **Express**: servidor y rutas de la API REST.
 - **PostgreSQL**: base de datos relacional.
 - **Prisma ORM**: modelos, migraciones y acceso a la base de datos.
 - **JWT (`jsonwebtoken`)**: autenticación mediante tokens.
